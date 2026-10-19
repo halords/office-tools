@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "offline-toolbox"
+version = "0.1.0"
+description = "A privacy-first, offline-first desktop application for PDFs and images"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+    { name = "Offline Toolbox Contributors" }
+]
+dependencies = [
+    "PySide6>=6.6.0",
+    "PyMuPDF>=1.24.0",
+    "pypdf>=4.0.0",
+    "Pillow>=10.0.0",
+    "python-docx>=1.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.0.0",
+]
+
+[project.scripts]
+offline-toolbox = "offline_toolbox.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
